@@ -7,8 +7,19 @@ class User extends BaseModel
 	validation:
 		name:
 			required: true
-			blank: false
 			minLength: 2
 			maxLength: 20
+			message: "Name erforderlich"
+		
+		password:
+			required: true
+			minLength: 8
+			maxLength: 30
+			message: "Passwort erforderlich"
+
+		email:
+			required: true
+			format: "email"
+			message: "Email erforderlich"
 
 module.exports = new User()

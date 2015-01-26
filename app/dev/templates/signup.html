@@ -1,40 +1,39 @@
 <h1 class="header-left-100">
-	Registrierungsformular
+Registrierungsformular
 </h1>
-<form data-abide>
-	<div class="left-100-absolute">
+<div class="left-100-absolute">
+	<form>
 		<div class="row signup-rows">
 			<div class="small-3 columns">
-				<label for="signup_name" class="right inline">Name</label>
+				<label for="name" class="right inline">Name</label>
 			</div>
 			<div class="small-9 columns">
-				<input type="text" id="signup_name" required />
-			</div>
-			<small class="error">Name is required and must be a string.</small>
-		</div>
-		<div class="row signup-rows">
-			<div class="small-3 columns">
-				<label for="signup_email" class="right inline">Email</label>
-			</div>
-			<div class="small-9 columns">
-					<input type="email" required id="signup_email" />
+				<input type="text" name="name" id="name" />
+				<small class="error hide"></small>
 			</div>
 		</div>
 		<div class="row signup-rows">
 			<div class="small-3 columns">
-				<label for="signup_password" class="right inline" >Password</label>
+				<label for="email" class="right inline">Email</label>
 			</div>
 			<div class="small-9 columns">
-					<input type="text" id="signup_password" required />
+				<input type="text" name="email" id="email" />
+				<small class="error hide"></small>
+			</div>
+		</div>
+		<div class="row signup-rows">
+			<div class="small-3 columns">
+				<label for="password" class="right inline" >Password</label>
+			</div>
+			<div class="small-9 columns">
+				<input type="text" name="password" id="password" />
+				<small class="error hide"></small>
 			</div>
 		</div>
 		<ul class="button-group">
 			<button class="radius" type="submit">
-				Registrieren
-			</button>
-			<button class="radius" type="button">
-				Einloggen
+			Registrieren
 			</button>
 		</ul>
-	</div>
-</form>
+	</form>
+</div>
