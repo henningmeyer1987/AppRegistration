@@ -15,7 +15,16 @@ class User extends BaseModel
 			required: true
 			minLength: 8
 			maxLength: 30
-			message: "Passwort erforderlich"
+			message: "Passwort min. 8 Zeichen"
+
+		password_confirmation:
+			fn: (value)->
+				if value.length < 8
+					return "Passwort min. 8 Zeichen"
+				else if @get("password") isnt value
+					return "Passwort stimmt nicht überein"				
+				else
+					return true
 
 		email:
 			required: true
