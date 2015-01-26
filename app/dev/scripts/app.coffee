@@ -1,1 +1,3 @@
-LoginView = require("./views/login.coffee")
+SignupView = require ("./views/signup.coffee")
+
+SignupView.show()
