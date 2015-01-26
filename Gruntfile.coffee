@@ -14,6 +14,13 @@ module.exports = (grunt) ->
 						debug: true
 					watch: true
 
+		sass:
+			build:
+				options:
+					sourcemap: true
+				files:
+					"app/build/stylesheets/app.css": "app/dev/stylesheets/app.scss"
+
 		connect:
 			build:
 				options:
@@ -36,6 +43,13 @@ module.exports = (grunt) ->
 					"app/build/js/app.js"
 				]
 				tasks: []
+				options:
+					livereload: true
+			build_css:
+				files: [
+					"app/dev/**/*.scss"
+				]
+				tasks: ["sass:build"]
 				options:
 					livereload: true
 
@@ -61,6 +75,7 @@ module.exports = (grunt) ->
 			"clean:build",
 			"copy",
 			"browserify:app",
+			"sass:build",
 			"connect:build",
 			"focus:build"
 		]
