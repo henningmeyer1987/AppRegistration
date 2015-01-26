@@ -55,7 +55,7 @@ module.exports = (grunt) ->
 
 		focus:
 			build:
-				include: ["build_js"]
+				include: ["build_js", "build_css"]
 
 		copy:
 			main:
