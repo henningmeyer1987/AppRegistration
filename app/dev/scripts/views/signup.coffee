@@ -20,13 +20,4 @@ class SignupView extends BaseView
 	show:()->
 		@render(signup_template)
 
-	onInvalidField: (attrName, attrValue, errors, model) ->
-		$("[name='" + attrName + "']").closest(".signup-rows").addClass("error")
-		$("[name='" + attrName + "']").next().removeClass("hide").html(errors)
-
-
-	onValidField: (attrName, attrValue, errors, model) ->
-		$("[name='" + attrName + "']").closest(".signup-rows").removeClass("error")
-		$("[name='" + attrName + "']").next().addClass("hide").empty()
-
 module.exports = new SignupView()
