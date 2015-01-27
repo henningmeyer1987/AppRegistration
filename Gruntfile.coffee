@@ -47,7 +47,7 @@ module.exports = (grunt) ->
 					livereload: true
 			build_css:
 				files: [
-					"app/dev/**/*.scss"
+					"app/dev/**/*.scss",
 				]
 				tasks: ["sass:build"]
 				options:
@@ -68,6 +68,11 @@ module.exports = (grunt) ->
 				cwd: 'app/dev/stylesheets'
 				src: '*.css'
 				dest:'app/build/css'
+			font:
+				expand: true
+				cwd: "app/dev/vendor/components-font-awesome/fonts/"
+				src: ["**"]
+				dest: "app/build/fonts"
 
 		require('load-grunt-tasks')(grunt)
 

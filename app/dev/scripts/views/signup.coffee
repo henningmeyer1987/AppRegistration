@@ -8,7 +8,7 @@ $ = require("jquery")
 require("jquery-serialize-object")
 
 class SignupView extends BaseView
-	el: "#app" 
+	el: "#js-content-region"
 	events: 
 		"submit form": (event)->
 			event.preventDefault()
