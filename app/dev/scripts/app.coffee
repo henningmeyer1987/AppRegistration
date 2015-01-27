@@ -29,6 +29,3 @@ class AppRouter extends Backbone.Router
 
 
 module.exports =  new AppRouter()
-
-#SignupView.show()
-#HomeView.show()
