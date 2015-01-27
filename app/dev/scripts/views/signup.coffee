@@ -2,7 +2,6 @@ BaseView = require("./base.coffee")
 SignupModel = require("../models/user.coffee")
 Backbone = require("backbone")
 require("backbone-validator")
-
 signup_template = require("../../templates/signup.html")
 $ = require("jquery")
 require("jquery-serialize-object")
