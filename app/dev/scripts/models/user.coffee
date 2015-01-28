@@ -3,9 +3,10 @@ BaseModel = require("./base.coffee")
 Backbone.Validator = require("backbone-validator")
 
 class User extends BaseModel
-	
+	urlRoot: "http://localhost:2403/users"	
+
 	validation:
-		name:
+		username:
 			required: true
 			minLength: 2
 			maxLength: 20
@@ -31,4 +32,4 @@ class User extends BaseModel
 			format: "email"
 			message: "Email erforderlich"
 
-module.exports = new User()
+module.exports = User

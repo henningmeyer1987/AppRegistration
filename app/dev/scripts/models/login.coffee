@@ -2,17 +2,16 @@ Backbone = require("backbone")
 BaseModel = require("./base.coffee")
 Backbone.Validator = require("backbone-validator")
 
-class Message extends BaseModel
-	validation:
-		contact_name:
-			required: true
-			minLength: 2
-			maxLength: 20
-			message: "Name erforderlich"
-		contact_textarea:
-			required: true
-			minLength: 5
-			maxLength: 100
-			message: "Name erforderlich"
+class Login extends BaseModel
+	urlRoot: "http://localhost:2403/users/login"
 
-module.exports = new Message()
+	validation:
+		username:
+			required: true
+			message: "Name erforderlich"
+			
+		password:
+			required: true
+			message: "Passwort erforderlich"
+
+module.exports = Login

@@ -6,4 +6,4 @@ class HomeView extends BaseView
 	show:()->
 		@render(home_template)
 
-module.exports = new HomeView()
+module.exports = HomeView
