@@ -3,6 +3,7 @@ BaseView = require("./base.coffee")
 UserModel = require("../models/user.coffee")
 ReportsModel = require("../models/reports.coffee")
 ReportTypesCollection =  require ("../collections/report_types.coffee")
+Helper = require("../utils/helper.coffee")
 require("backbone-validator")
 $ = require("jquery")
 _ = require("underscore")
@@ -26,6 +27,7 @@ class ReportsView extends BaseView
 		ReportTypesCollection.fetch
 			success:(collection, response, options)=>
 				@render(@template, report_types: ReportTypesCollection.models)
+				Helper.initializeDatepicker($("#reportdate"))
 			error:(collection, response, options)->
 				console.log response
 

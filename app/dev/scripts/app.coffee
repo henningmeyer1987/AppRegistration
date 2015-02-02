@@ -1,3 +1,5 @@
+$ = require("jquery")
+window.jQuery = $
 Backbone = require ("backbone")
 _ = require ("underscore")
 require("routefilter")
@@ -8,8 +10,6 @@ NavigationView = require ("./views/navigation.coffee")
 HomeView = require ("./views/home.coffee")
 ReportsView = require ("./views/reports.coffee")
 DashboardView = require ("./views/dashboard.coffee")
-$ = require("jquery")
-window.jQuery = $
 window.Modernizr = require('browsernizr2')
 foundation = require("foundation") #exports window.Foundation
 UserModel = require("./models/user.coffee")
