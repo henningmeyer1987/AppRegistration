@@ -1,9 +1,11 @@
+Backbone = require("backbone")
 BaseView = require("./base.coffee")
 ReportsModel = require("../models/reports.coffee")
-Backbone = require("backbone")
+ReportTypesCollection =  require ("../collections/report_types.coffee")
 require("backbone-validator")
 $ = require("jquery")
 require("jquery-serialize-object")
+
 
 class ReportsView extends BaseView
 	model: {}
@@ -22,11 +24,19 @@ class ReportsView extends BaseView
 					console.log response				
 
 	initialize: ->
+		test = new Date()
+		console.log test
 		@model = new ReportsModel()
 		@bindValidation(@model)
 
 	show:()->
-		@render(@template, {})
+		console.log ReportTypesCollection
+		ReportTypesCollection.fetch
+			success:(collection, response, options)=>
+				@render(@template, report_types: ReportTypesCollection.models)
+			error:(collection, response, options)->
+				console.log response
+
 		return @
 
 module.exports = ReportsView

@@ -6,7 +6,7 @@ class Reports extends BaseModel
 	urlRoot: "http://localhost:2403/reports"
 
 	validation:
-		reportDate:
+		reportdate:
 			required: true
 			minLength: 10
 			maxLength: 10

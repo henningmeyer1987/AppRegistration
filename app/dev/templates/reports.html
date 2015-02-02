@@ -3,13 +3,13 @@
 		<h3>
 		Bericht erstellen
 		</h3>
-		<form>
+		<form class="custom">
 			<div class="row">
 				<div class="small-3 columns">
-					<label for="reportDate" class="right inline">Berichtsdatum</label>
+					<label for="reportdate" class="right inline">Berichtsdatum</label>
 				</div>
 				<div class="small-9 columns">
-					<input type="text" name="reportDate" id="reportDate" />
+					<input type="text" name="reportdate" id="reportdate" />
 					<small class="error hide"></small>
 				</div>
 			</div>
@@ -20,6 +20,17 @@
 				<div class="small-9 columns">
 					<textarea name="description" id="description"></textarea>
 					<small class="error hide"></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-3 columns">
+					<label for="reporttype" class="right">Berichtsart</label>
+				</div>
+				<div class="small-9 columns">
+					{% for report_type in report_types %}
+						<input {% if report_type.get('typename') == 'work'%} checked='checked' {% endif %} type="radio" name="reporttype" id="{{report_type.get('typename')}}" value="{{report_type.get('id')}}">
+						<label for="{{report_type.get('typename')}}">{{report_type.get('typename')}}</label>
+					{% endfor %}
 				</div>
 			</div>
 			<div class="row">

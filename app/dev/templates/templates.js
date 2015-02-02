@@ -104,7 +104,39 @@ var lineno = null;
 var colno = null;
 var output = "";
 try {
-output += "<div class=\"row content\">\n\t<div class=\"large-12 columns\">\n\t\t<h3>\n\t\tBericht erstellen\n\t\t</h3>\n\t\t<form>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"small-3 columns\">\n\t\t\t\t\t<label for=\"reportDate\" class=\"right inline\">Berichtsdatum</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"small-9 columns\">\n\t\t\t\t\t<input type=\"text\" name=\"reportDate\" id=\"reportDate\" />\n\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"small-3 columns\">\n\t\t\t\t\t<label for=\"description\" class=\"right inline\" >Bericht</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"small-9 columns\">\n\t\t\t\t\t<textarea name=\"description\" id=\"description\"></textarea>\n\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"small-12 columns text-right\">\n\t\t\t\t\t<button class=\"radius small button\" type=\"submit\">\n\t\t\t\t\t<i class=\"fa fa-file-text\"></i> Bericht erstellen\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</div>";
+output += "<div class=\"row content\">\n\t<div class=\"large-12 columns\">\n\t\t<h3>\n\t\tBericht erstellen\n\t\t</h3>\n\t\t<form class=\"custom\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"small-3 columns\">\n\t\t\t\t\t<label for=\"reportdate\" class=\"right inline\">Berichtsdatum</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"small-9 columns\">\n\t\t\t\t\t<input type=\"text\" name=\"reportdate\" id=\"reportdate\" />\n\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"small-3 columns\">\n\t\t\t\t\t<label for=\"description\" class=\"right inline\" >Bericht</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"small-9 columns\">\n\t\t\t\t\t<textarea name=\"description\" id=\"description\"></textarea>\n\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"small-3 columns\">\n\t\t\t\t\t<label for=\"reporttype\" class=\"right\">Berichtsart</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"small-9 columns\">\n\t\t\t\t\t";
+frame = frame.push();
+var t_3 = runtime.contextOrFrameLookup(context, frame, "report_types");
+if(t_3) {var t_2 = t_3.length;
+for(var t_1=0; t_1 < t_3.length; t_1++) {
+var t_4 = t_3[t_1];
+frame.set("report_type", t_4);
+frame.set("loop.index", t_1 + 1);
+frame.set("loop.index0", t_1);
+frame.set("loop.revindex", t_2 - t_1);
+frame.set("loop.revindex0", t_2 - t_1 - 1);
+frame.set("loop.first", t_1 === 0);
+frame.set("loop.last", t_1 === t_2 - 1);
+frame.set("loop.length", t_2);
+output += "\n\t\t\t\t\t\t<input ";
+if((lineno = 30, colno = 32, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["typename"])) == "work") {
+output += " checked='checked' ";
+;
+}
+output += " type=\"radio\" name=\"reporttype\" id=\"";
+output += runtime.suppressValue((lineno = 30, colno = 131, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["typename"])), env.autoesc);
+output += "\" value=\"";
+output += runtime.suppressValue((lineno = 30, colno = 167, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["id"])), env.autoesc);
+output += "\">\n\t\t\t\t\t\t<label for=\"";
+output += runtime.suppressValue((lineno = 31, colno = 33, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["typename"])), env.autoesc);
+output += "\">";
+output += runtime.suppressValue((lineno = 31, colno = 62, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["typename"])), env.autoesc);
+output += "</label>\n\t\t\t\t\t";
+;
+}
+}
+frame = frame.pop();
+output += "\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"small-12 columns text-right\">\n\t\t\t\t\t<button class=\"radius small button\" type=\"submit\">\n\t\t\t\t\t<i class=\"fa fa-file-text\"></i> Bericht erstellen\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</div>";
 cb(null, output);
 ;
 } catch (e) {
