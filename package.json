@@ -20,8 +20,10 @@
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-focus": "^0.1.1",
+    "grunt-nunjucks": "^0.1.4",
     "grunt-sass": "^0.14.1",
-    "html2js-browserify": "0.0.2"
+    "html2js-browserify": "0.0.2",
+    "nunjucks": "^1.1.0"
   },
   "devDependencies": {
     "load-grunt-tasks": "^0.6.0"

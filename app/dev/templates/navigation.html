@@ -7,17 +7,21 @@
 	</ul>
 	<section class="top-bar-section">
 		<ul class="left">
-			<li><a href="#login"><i class="fa fa-sign-in"></i> Einloggen</a></li>
+			{% if not user.get("username") %}
 			<li><a href="#signup"><i class="fa fa-sign-out"></i> Registrieren</a></li>
+			{% else %}
 			<li><a href="#reports"><i class="fa fa-floppy-o"></i> Bericht erstellen</a></li>
+			{% endif %}
 		</ul>
+		{% if user.get("username") %}
 		<ul class="right">
 			<li class="has-dropdown">
-			<a href="#"><i class="fa fa-user"></i> Account</a>
+			<a href="#"><i class="fa fa-user"></i> {{user.get("username")}}</a>
 			<ul class="dropdown">
-				<li><a href="#">Logout</a></li>
+				<li><a href="#logout">Logout</a></li>
 			</ul>
 			</li>
 		</ul>
+		{% endif %}
 	</section>
 </nav>

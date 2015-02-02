@@ -1,14 +1,16 @@
 BaseView = require("./base.coffee")
 LoginModel = require("../models/login.coffee")
+UserModel = require("../models/user.coffee")
 Backbone = require("backbone")
 require("backbone-validator")
-login_template = require("../../templates/login.html")
 $ = require("jquery")
 require("jquery-serialize-object")
 
+
 class LoginView extends BaseView
 	model: {}
-	el: "#js-content-region"
+	el: "#js-login-region"
+	template: "app/dev/templates/login.html"
 	events: 
 		"submit form": (event)->
 			event.preventDefault()
@@ -18,7 +20,7 @@ class LoginView extends BaseView
 			@model.save null,
 				success:(model, response, options) =>
 					@set_localstorage(model)
-					window.location.reload()
+					Backbone.history.navigate("home", trigger:true)
 				error:(model, response, options)->
 					console.log response				
 
@@ -27,12 +29,14 @@ class LoginView extends BaseView
 		@bindValidation(@model)
 
 	show:()->
-		@render(login_template)
+		@render(@template, {})
+		return @
 
 	set_localstorage:(model)->
 		user = 
 			"username": model.get("username")
 			"uid": model.get("uid")
+		UserModel.set(user)
 		localStorage.setItem('user', JSON.stringify(user))
 
 module.exports = LoginView

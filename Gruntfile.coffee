@@ -3,6 +3,11 @@ module.exports = (grunt) ->
 	grunt.initConfig
 		pkg: grunt.file.readJSON("package.json")
 
+		nunjucks:
+			precompile:
+				src: ["app/dev/**/*.html", "!app/dev/templates/index.html", "!app/dev/vendor/**/*.html"]
+				dest: "app/dev/templates/templates.js"
+
 		browserify:
 			app:
 				src: ["app/dev/**/*.coffee"]
@@ -52,10 +57,15 @@ module.exports = (grunt) ->
 				tasks: ["sass:build"]
 				options:
 					livereload: true
+			build_templates:
+				files: [
+					"app/dev/**/*.html"
+				]
+				tasks: ["nunjucks"]
 
 		focus:
 			build:
-				include: ["build_js", "build_css"]
+				include: ["build_templates", "build_js", "build_css"]
 
 		copy:
 			main:
@@ -79,6 +89,7 @@ module.exports = (grunt) ->
 		grunt.registerTask "default", [
 			"clean:build",
 			"copy",
+			"nunjucks",
 			"browserify:app",
 			"sass:build",
 			"connect:build",

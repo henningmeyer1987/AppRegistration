@@ -1,13 +1,18 @@
 BaseView = require("./base.coffee")
-navigation_template = require("../../templates/navigation.html")
 $ = require("jquery")
 UserModel = require("../models/user.coffee")
 
+
 class NavigationView extends BaseView
 	el: "#js-top-region"
-			
+	template: "app/dev/templates/navigation.html"			
+	
+	initialize:()->
+		@listenTo(UserModel, "change:uid", @show)
+
 	show:()->
-		console.log UserModel
-		@render(navigation_template)
+		@render(@template, user:UserModel)
+		$(document).foundation('topbar', 'reflow');
+		return @
 
 module.exports = new NavigationView()

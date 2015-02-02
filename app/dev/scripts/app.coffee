@@ -1,11 +1,13 @@
 Backbone = require ("backbone")
 _ = require ("underscore")
 require("routefilter")
+Helper = require("./utils/helper.coffee")
+templates = require("../templates/templates.js")
 SignupView = require ("./views/signup.coffee")
 NavigationView = require ("./views/navigation.coffee")
 HomeView = require ("./views/home.coffee")
-LoginView = require ("./views/login.coffee")
 ReportsView = require ("./views/reports.coffee")
+DashboardView = require ("./views/dashboard.coffee")
 $ = require("jquery")
 window.jQuery = $
 window.Modernizr = require('browsernizr2')
@@ -21,7 +23,7 @@ class AppRouter extends Backbone.Router
 		"": "home"
 		"home": "home"
 		"signup": "signup"
-		"login": "login"
+		"logout": "logout"
 		"reports": "reports"
 
 	before:(route) ->
@@ -32,23 +34,24 @@ class AppRouter extends Backbone.Router
 		user = localStorage.getItem('user')
 		if user?
 			UserModel.set(JSON.parse(user))
-		NavigationView.show()
+		else
+			NavigationView.show()
 		Backbone.history.start()
 
 	home: () ->
-		@current_view = new HomeView()
-		@current_view.show()
+		if UserModel.get("uid")?
+			@current_view = new DashboardView().show()
+		else
+			@current_view = new HomeView().show()
 
 	signup: () ->
-		@current_view = new SignupView()
-		@current_view.show()
+		@current_view = new SignupView().show()
 
-	login: () ->
-		@current_view = new LoginView()
-		@current_view.show()
+	logout: ()->
+		Helper.logout()
+		@current_view = new HomeView().show()		
 
 	reports: () ->
-		@current_view = new ReportsView()
-		@current_view.show()
+		@current_view = new ReportsView().show()
 
 module.exports =  new AppRouter()

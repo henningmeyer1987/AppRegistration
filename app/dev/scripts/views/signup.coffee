@@ -2,13 +2,13 @@ BaseView = require("./base.coffee")
 UserModel = require("../models/user.coffee")
 Backbone = require("backbone")
 require("backbone-validator")
-signup_template = require("../../templates/signup.html")
 $ = require("jquery")
 require("jquery-serialize-object")
 
 class SignupView extends BaseView
 	model: {}
 	el: "#js-content-region"
+	template: "app/dev/templates/signup.html"
 	events: 
 		"submit form": (event)->
 			event.preventDefault()
@@ -26,6 +26,7 @@ class SignupView extends BaseView
 		@bindValidation(@model)
 			
 	show:()->
-		@render(signup_template)
+		@render(@template, {})
+		return @
 
 module.exports = SignupView
