@@ -4,15 +4,17 @@ moment = require("moment")
 UserModel = require("../models/user.coffee")
 
 class Helper	
-	initializeDatepicker: (element) ->
+	initializeDatepicker: (element, has_future_date) ->
 		element.datetimepicker(
+			scrollInput:false, 
 			closeOnDateSelect: true,
 			lang:'de',
 			format:'d.m.Y',
 			onShow: (ct) ->
-				#@setOptions(
-				#	maxDate: (if dateEnd then moment(dateEnd, "DD.MM.YYYY").format("YYYY/MM/DD") else false),
-				#)
+				if !has_future_date
+					@setOptions(
+						maxDate: moment().format("DD.MM.YYYY")
+					)
 			timepicker:false
 		).val(moment().format("DD.MM.YYYY"))
 

@@ -3,7 +3,10 @@ UserModel = require("../models/user.coffee")
 Backbone = require("backbone")
 require("backbone-validator")
 $ = require("jquery")
+_ = require("underscore")
 require("jquery-serialize-object")
+Helper = require("../utils/helper.coffee")
+moment= require("moment")
 
 class SignupView extends BaseView
 	model: {}
@@ -12,7 +15,11 @@ class SignupView extends BaseView
 	events: 
 		"submit form": (event)->
 			event.preventDefault()
+			date_now = moment().format("DD.MM.YYYY")
 			form_data = $('form').serializeObject()
+			_.extend form_data, 
+			"datecreated" : date_now
+			"datemodified": date_now
 			@model.set(form_data)
 			return if !@model.isValid()
 			@model.save null,
@@ -27,6 +34,8 @@ class SignupView extends BaseView
 			
 	show:()->
 		@render(@template, {})
+		Helper.initializeDatepicker($("#apprenticeshipstart"), true)
+		Helper.initializeDatepicker($("#apprenticeshipend"), true)
 		return @
 
 module.exports = SignupView

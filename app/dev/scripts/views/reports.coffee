@@ -43,8 +43,6 @@ class ReportsView extends BaseView
 			"datemodified": date_now
 		@model.set(form_data)
 		return if !@model.isValid()
-		@model.set("datecreated", date_now)
-		@model.set("datemodified", date_now)
 		@model.save null,
 			success:(model, response, options)->
 				Backbone.history.navigate("home", trigger:true)

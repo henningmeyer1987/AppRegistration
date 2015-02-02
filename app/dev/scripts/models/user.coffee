@@ -7,11 +7,23 @@ class User extends BaseModel
 		return "http://localhost:2403/users"	
 
 	validation:
+
 		username:
+			required: true
+			format: "email"
+			message: "Email erforderlich"
+
+		firstname:
 			required: true
 			minLength: 2
 			maxLength: 20
-			message: "Name erforderlich"
+			message: "Vorname erforderlich"
+
+		lastname:
+			required: true
+			minLength: 2
+			maxLength: 20
+			message: "Nachname erforderlich"
 		
 		password:
 			required: true
@@ -28,9 +40,6 @@ class User extends BaseModel
 				else
 					return true
 
-		email:
-			required: true
-			format: "email"
-			message: "Email erforderlich"
+
 
 module.exports = new User()
