@@ -1,8 +1,25 @@
-@import "../vendor/foundation/scss/foundation.scss";
-@import "../vendor/components-font-awesome/scss/font-awesome.scss";
-@import "main.scss";
-
+@import"../vendor/foundation/scss/foundation.scss";
+@import"../vendor/components-font-awesome/scss/font-awesome.scss";
+@import"main.scss";
 input {
-	margin:0px !important;
+    margin: 0px !important;
+}
+body {
+    background: #F7F7F7;
+}
 
+.content {
+    background: #fff;
+    border: 1px solid #E8E8E8;
+    border-radius: 2px;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    h2 {
+    	border-bottom: 1px solid #ccc;
+    }
+
+    form {
+    	margin-top: 30px;
+    }
 }

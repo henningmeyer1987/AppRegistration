@@ -5,6 +5,15 @@ SignupView = require ("./views/signup.coffee")
 NavigationView = require ("./views/navigation.coffee")
 HomeView = require ("./views/home.coffee")
 LoginView = require ("./views/login.coffee")
+ReportsView = require ("./views/reports.coffee")
+$ = require("jquery")
+window.jQuery = $
+window.Modernizr = require('browsernizr2')
+foundation = require("foundation") #exports window.Foundation
+UserModel = require("./models/user.coffee")
+
+$ ->
+	$(document).foundation()
 
 class AppRouter extends Backbone.Router
 	current_view: {}
@@ -13,12 +22,16 @@ class AppRouter extends Backbone.Router
 		"home": "home"
 		"signup": "signup"
 		"login": "login"
+		"reports": "reports"
 
 	before:(route) ->
 		if _.isEmpty(@current_view) is false
-			console.log "asdasdasd"
 			@current_view.destroy(@current_view)
+
 	initialize: ()->
+		user = localStorage.getItem('user')
+		if user?
+			UserModel.set(JSON.parse(user))
 		NavigationView.show()
 		Backbone.history.start()
 
@@ -32,6 +45,10 @@ class AppRouter extends Backbone.Router
 
 	login: () ->
 		@current_view = new LoginView()
+		@current_view.show()
+
+	reports: () ->
+		@current_view = new ReportsView()
 		@current_view.show()
 
 module.exports =  new AppRouter()

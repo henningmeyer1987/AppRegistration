@@ -1,44 +1,52 @@
-<h1>
-Registrierungsformular
-</h1>
-<form>
-	<div class="row">
-		<div class="small-3 columns">
-			<label for="username" class="right inline">Name</label>
-		</div>
-		<div class="small-9 columns">
-			<input type="text" name="username" id="username" />
-			<small class="error hide"></small>
-		</div>
+<div class="row content">
+	<div class="large-12 columns">
+		<h2>
+		Registrierungsformular
+		</h2>
+		<form>
+			<div class="row">
+				<div class="small-3 columns">
+					<label for="username" class="right inline">Name</label>
+				</div>
+				<div class="small-9 columns">
+					<input type="text" name="username" id="username" />
+					<small class="error hide"></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-3 columns">
+					<label for="email" class="right inline">Email</label>
+				</div>
+				<div class="small-9 columns">
+					<input type="text" name="email" id="email" />
+					<small class="error hide"></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-3 columns">
+					<label for="password" class="right inline" >Passwort</label>
+				</div>
+				<div class="small-9 columns">
+					<input type="password" name="password" id="password" />
+					<small class="error hide"></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-3 columns">
+					<label for="password_confirmation" class="right inline" >Passwort wiederholen</label>
+				</div>
+				<div class="small-9 columns">
+					<input type="password" name="password_confirmation" id="password_confirmation" />
+					<small class="error hide"></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-12 columns text-right">
+					<button class="radius small button" type="submit">
+					Registrieren
+					</button>
+				</div>
+			</div>
+		</form>
 	</div>
-	<div class="row">
-		<div class="small-3 columns">
-			<label for="email" class="right inline">Email</label>
-		</div>
-		<div class="small-9 columns">
-			<input type="text" name="email" id="email" />
-			<small class="error hide"></small>
-		</div>
-	</div>
-	<div class="row">
-		<div class="small-3 columns">
-			<label for="password" class="right inline" >Passwort</label>
-		</div>
-		<div class="small-9 columns">
-			<input type="password" name="password" id="password" />
-			<small class="error hide"></small>
-		</div>
-	</div>
-	<div class="row">
-		<div class="small-3 columns">
-			<label for="password_confirmation" class="right inline" >Passwort wiederholen</label>
-		</div>
-		<div class="small-9 columns">
-			<input type="password" name="password_confirmation" id="password_confirmation" />
-			<small class="error hide"></small>
-		</div>
-	</div>	
-<button class="radius" type="submit">
-	Registrieren
-</button>
-</form>
+</div>

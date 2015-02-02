@@ -1,12 +1,12 @@
 BaseView = require("./base.coffee")
-UserModel = require("../models/user.coffee")
+ReportsModel = require("../models/reports.coffee")
 Backbone = require("backbone")
 require("backbone-validator")
-signup_template = require("../../templates/signup.html")
+reports_template = require("../../templates/reports.html")
 $ = require("jquery")
 require("jquery-serialize-object")
 
-class SignupView extends BaseView
+class ReportsView extends BaseView
 	model: {}
 	el: "#js-content-region"
 	events: 
@@ -19,13 +19,13 @@ class SignupView extends BaseView
 				success:(model, response, options)->
 					Backbone.history.navigate("home", trigger:true)
 				error:(model, response, options)->
-					console.log response
+					console.log response				
 
 	initialize: ->
-		@model = UserModel
+		@model = new ReportsModel()
 		@bindValidation(@model)
-			
-	show:()->
-		@render(signup_template)
 
-module.exports = SignupView
+	show:()->
+		@render(reports_template)
+
+module.exports = ReportsView

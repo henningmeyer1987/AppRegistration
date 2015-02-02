@@ -16,8 +16,9 @@ class LoginView extends BaseView
 			@model.set(form_data)
 			return if !@model.isValid()
 			@model.save null,
-				success:(model, response, options)->
-					Backbone.history.navigate("home", trigger:true)
+				success:(model, response, options) =>
+					@set_localstorage(model)
+					window.location.reload()
 				error:(model, response, options)->
 					console.log response				
 
@@ -27,5 +28,11 @@ class LoginView extends BaseView
 
 	show:()->
 		@render(login_template)
+
+	set_localstorage:(model)->
+		user = 
+			"username": model.get("username")
+			"uid": model.get("uid")
+		localStorage.setItem('user', JSON.stringify(user))
 
 module.exports = LoginView
