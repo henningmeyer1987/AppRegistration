@@ -10,7 +10,8 @@
     "jquery-serialize-object": "~2.4.3",
     "components-font-awesome": "~4.3.0",
     "routefilter": "~0.2.1",
-    "nunjucks": "~1.1.0"
+    "nunjucks": "~1.1.0",
+    "moment": "~2.9.0"
   },
   "private": true,
   "analytics": false
