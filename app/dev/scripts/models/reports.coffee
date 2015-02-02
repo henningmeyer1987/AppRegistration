@@ -6,10 +6,10 @@ class Reports extends BaseModel
 	urlRoot: "http://localhost:2403/reports"
 
 	validation:
+		
 		reportdate:
 			required: true
-			minLength: 10
-			maxLength: 10
+			format: /^([0-9]{1,2})\.([0-9]{1,2})\.([0-9]{4})$/
 			message: "Berichtsdatum erforderlich"
 		
 		description:

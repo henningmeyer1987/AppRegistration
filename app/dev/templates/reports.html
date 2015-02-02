@@ -4,7 +4,7 @@
 		Bericht erstellen
 		</h3>
 		<form class="custom">
-			<div class="row">
+			<div class="row form-row">
 				<div class="small-3 columns">
 					<label for="reportdate" class="right inline">Berichtsdatum</label>
 				</div>
@@ -13,7 +13,7 @@
 					<small class="error hide"></small>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row form-row">
 				<div class="small-3 columns">
 					<label for="description" class="right inline" >Bericht</label>
 				</div>
@@ -22,13 +22,13 @@
 					<small class="error hide"></small>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row form-row">
 				<div class="small-3 columns">
 					<label for="reporttype" class="right">Berichtsart</label>
 				</div>
 				<div class="small-9 columns">
 					{% for report_type in report_types %}
-						<input {% if report_type.get('typename') == 'work'%} checked='checked' {% endif %} type="radio" name="reporttype" id="{{report_type.get('typename')}}" value="{{report_type.get('id')}}">
+						<input {% if report_type.get('typename') == 'work'%} checked='checked' {% endif %} type="radio" name="typeid" id="{{report_type.get('typename')}}" value="{{report_type.get('id')}}">
 						<label for="{{report_type.get('typename')}}">{{report_type.get('typename')}}</label>
 					{% endfor %}
 				</div>

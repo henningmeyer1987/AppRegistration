@@ -17,11 +17,11 @@ class BaseView extends Backbone.View
 		$(view.el).empty()	
 
 	onInvalidField: (attrName, attrValue, errors, model) ->
-		$("[name='" + attrName + "']").closest(".row").addClass("error")
-		$("[name='" + attrName + "']").next().removeClass("hide").html(errors)
+		$("[name='" + attrName + "']").closest(".form-row").addClass("error")
+		$("[name='" + attrName + "']").next("small.error").removeClass("hide").html(errors)
 
 	onValidField: (attrName, attrValue, errors, model) ->
-		$("[name='" + attrName + "']").closest(".row").removeClass("error")
-		$("[name='" + attrName + "']").next().addClass("hide").empty()
+		$("[name='" + attrName + "']").closest(".form-row").removeClass("error")
+		$("[name='" + attrName + "']").next("small.error").addClass("hide").empty()
 
 module.exports = BaseView
