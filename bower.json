@@ -9,7 +9,8 @@
     "foundation": "zurb/bower-foundation#~5.4.5",
     "jquery-serialize-object": "~2.4.3",
     "components-font-awesome": "~4.3.0",
-    "routefilter": "~0.2.1"
+    "routefilter": "~0.2.1",
+    "nunjucks": "~1.1.0"
   },
   "private": true,
   "analytics": false
