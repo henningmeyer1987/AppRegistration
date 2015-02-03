@@ -1,7 +1,46 @@
 <div class="row content">
 	<div class="small-12 columns">
 		<h3>
-			Dashboard
+			Berichte Übersicht
 		</h3>
 	</div>
+</div>
+<div class="row">
+	<table>
+		<thead>
+			<tr>
+				<th width="300px">
+					Berichtsdatum
+				</th>
+				<th width="1500px">
+					Bericht
+				</th>
+				<th width="300px">
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for report in reports %}
+			<tr>
+				<td>
+					{{report.get('reportdate')}}
+				</td>
+				<td>
+					{{report.get('description')}}
+
+				</td>
+				<td>
+					<ul class="button-group round">
+						<li>
+							<a class="button small success report-edit" name="action" value="{{report.get('id')}}"><i class="fa fa-pencil-square-o"></i></a>
+						</li>
+						<li>
+							<a class="button small alert report-delete" name="action" value="{{report.get('id')}}"><i class="fa fa-trash-o"></i></a>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 </div>
