@@ -11,10 +11,9 @@ class DashboardView extends BaseView
 	$(document).ready( ()->
 		$('.report-edit').on "click", (event)->
 			console.log event.target
-		$('.report-delete').click ->
-			#console.log event.target
-			ReportIDModel = new ReportModel("5d1e2bb93dfd18a5").destroy_report()
-			console.log ReportIDModel
+		$('.report-delete').on "click", (event)->
+			reportID = $(this).attr 'reportID'
+			ReportIDModel = new ReportModel(reportID).destroy_report()
 	)	
 	el: "#js-content-region"
 	template: "app/dev/templates/dashboard.html"
