@@ -24,18 +24,18 @@ class ReportsView extends BaseView
 		@bindValidation(@model)
 
 	show:()->
-		ReportModel = new ReportsModel()
-		ReportModel.set id:"d72456e49b945806"
-		ReportModel.fetch
-			success:(model, response, options)->
-				console.log "ReportModel START"
-				@report = ReportModel.attributes
-				console.log @report
-				console.log "ReportModel ENDE"
-			error: (model, response, options)->
-				console.log "fehler!"
-		
-		console.log @report
+		#ReportModel = new ReportsModel()
+		#ReportModel.set id:"d72456e49b945806"
+		#ReportModel.fetch
+		#	success:(model, response, options)->
+		#		console.log "ReportModel START"
+		#		@report = ReportModel.attributes
+		#		console.log @report
+		#		console.log "ReportModel ENDE"
+		#	error: (model, response, options)->
+		#		console.log "fehler!"
+		#
+		#console.log @report
 		ReportTypesCollection.fetch
 			success:(collection, response, options)=>
 				console.log ReportTypesCollection.models
