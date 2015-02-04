@@ -15,7 +15,7 @@ class Reports extends BaseModel
 		description:
 			required: true
 			minLength: 10
-			maxLength: 100
+			maxLength: 255
 			message: "Berichtbeschreibung mit min. 10 Zeichen erforderlich"
 
 module.exports = Reports

@@ -1,7 +1,9 @@
 $ = require("jquery")
+Backbone = require("backbone")
 datetimepicker=require("datetimepicker")
 moment = require("moment")
 UserModel = require("../models/user.coffee")
+ReportRoot = require("../models/report_root.coffee")
 
 class Helper	
 	initializeDatepicker: (element, has_future_date) ->
@@ -23,7 +25,16 @@ class Helper
 		if user?
 			localStorage.removeItem('user')
 		UserModel.clear()
-		console.log UserModel
-
+		
+	destroyReport:(reportID)->
+		console.log reportID
+		ReportIDModel = new ReportRoot()
+		ReportIDModel.set id:reportID
+		ReportIDModel.destroy
+			success:(model, response, options)=>
+				console.log response
+			error:(model, response, options)->
+				console.log response				
+		console.log ReportIDModel
 
 module.exports= new Helper()

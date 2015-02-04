@@ -54,11 +54,11 @@ output += "\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t";
 output += runtime.suppressValue((lineno = 25, colno = 15, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["reportdate"])), env.autoesc);
 output += "\n\t\t\t\t</td>\n\t\t\t\t<td>\n\t\t\t\t\t";
 output += runtime.suppressValue((lineno = 28, colno = 15, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["description"])), env.autoesc);
-output += "\n\n\t\t\t\t</td>\n\t\t\t\t<td>\n\t\t\t\t\t<ul class=\"button-group round\">\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a class=\"button small success report-edit\" reportID=\"";
-output += runtime.suppressValue((lineno = 34, colno = 71, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["id"])), env.autoesc);
-output += "\"><i class=\"fa fa-pencil-square-o\"></i></a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a class=\"button small alert report-delete\" reportID=\"";
-output += runtime.suppressValue((lineno = 37, colno = 71, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["id"])), env.autoesc);
-output += "\"><i class=\"fa fa-trash-o\"></i></a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t\t";
+output += "\n\n\t\t\t\t</td>\n\t\t\t\t<td>\n\t\t\t\t\t<ul class=\"button-group round\">\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a class=\"button small success report-edit fa fa-pencil-square-o\" reportID=\"";
+output += runtime.suppressValue((lineno = 34, colno = 93, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["id"])), env.autoesc);
+output += "\"></a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<a class=\"button small alert report-delete fa fa-trash-o\" reportID=\"";
+output += runtime.suppressValue((lineno = 37, colno = 85, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["id"])), env.autoesc);
+output += "\"></a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t\t";
 ;
 }
 }

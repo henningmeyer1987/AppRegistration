@@ -5,14 +5,14 @@ _ = require ("underscore")
 require("routefilter")
 Helper = require("./utils/helper.coffee")
 templates = require("../templates/templates.js")
+window.Modernizr = require('browsernizr2')
+foundation = require("foundation") #exports window.Foundation
+UserModel = require("./models/user.coffee")
 SignupView = require ("./views/signup.coffee")
 NavigationView = require ("./views/navigation.coffee")
 HomeView = require ("./views/home.coffee")
 ReportsView = require ("./views/reports.coffee")
 DashboardView = require ("./views/dashboard.coffee")
-window.Modernizr = require('browsernizr2')
-foundation = require("foundation") #exports window.Foundation
-UserModel = require("./models/user.coffee")
 
 $ ->
 	$(document).foundation()

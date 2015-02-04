@@ -1,7 +1,8 @@
 BaseView = require("./base.coffee")
+Backbone = require("backbone")
 UserModel = require("../models/user.coffee")
-ReportModel = require("../models/report_id.coffee")
 UserReportsCollection =  require ("../collections/user_reports.coffee")
+Helper = require("../utils/helper.coffee")
 $ = require("jquery")
 require("jquery-serialize-object")
 
@@ -13,7 +14,8 @@ class DashboardView extends BaseView
 			console.log event.target
 		$('.report-delete').on "click", (event)->
 			reportID = $(this).attr 'reportID'
-			ReportIDModel = new ReportModel(reportID).destroy_report()
+			Helper.destroyReport(reportID)
+			#Backbone.history.navigate("home", trigger:true)
 	)	
 	el: "#js-content-region"
 	template: "app/dev/templates/dashboard.html"
