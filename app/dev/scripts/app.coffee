@@ -25,6 +25,7 @@ class AppRouter extends Backbone.Router
 		"signup": "signup"
 		"logout": "logout"
 		"reports": "reports"
+		"report_update": "report_update"
 
 	before:(route) ->
 		if _.isEmpty(@current_view) is false
@@ -52,6 +53,9 @@ class AppRouter extends Backbone.Router
 		@current_view = new HomeView().show()		
 
 	reports: () ->
+		@current_view = new ReportsView().show()
+
+	report_update:() ->
 		@current_view = new ReportsView().show()
 
 module.exports =  new AppRouter()

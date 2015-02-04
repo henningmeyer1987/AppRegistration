@@ -4,7 +4,7 @@ Backbone.Validator = require("backbone-validator")
 
 class Reports extends BaseModel
 	urlRoot: "http://localhost:2403/reports"
-
+	
 	validation:
 		
 		reportdate:

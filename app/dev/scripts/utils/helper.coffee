@@ -26,15 +26,14 @@ class Helper
 			localStorage.removeItem('user')
 		UserModel.clear()
 		
-	destroyReport:(reportID)->
-		console.log reportID
+	deleteReport:(reportID)->
 		ReportIDModel = new ReportRoot()
 		ReportIDModel.set id:reportID
 		ReportIDModel.destroy
 			success:(model, response, options)=>
 				console.log response
 			error:(model, response, options)->
-				console.log response				
-		console.log ReportIDModel
+				console.log response
+		Backbone.history.navigate("home", trigger:true)
 
 module.exports= new Helper()

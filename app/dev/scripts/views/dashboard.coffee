@@ -1,5 +1,6 @@
 BaseView = require("./base.coffee")
 Backbone = require("backbone")
+ReportsModel = require("../models/reports.coffee")
 UserModel = require("../models/user.coffee")
 UserReportsCollection =  require ("../collections/user_reports.coffee")
 Helper = require("../utils/helper.coffee")
@@ -11,11 +12,13 @@ class DashboardView extends BaseView
 
 	$(document).ready( ()->
 		$('.report-edit').on "click", (event)->
-			console.log event.target
+			reportID = $(this).attr 'reportID'
+
+			Backbone.history.navigate("report_update", trigger:true)
+
 		$('.report-delete').on "click", (event)->
 			reportID = $(this).attr 'reportID'
-			Helper.destroyReport(reportID)
-			#Backbone.history.navigate("home", trigger:true)
+			Helper.deleteReport(reportID)
 	)	
 	el: "#js-content-region"
 	template: "app/dev/templates/dashboard.html"
