@@ -13,6 +13,7 @@ NavigationView = require ("./views/navigation.coffee")
 HomeView = require ("./views/home.coffee")
 ReportsView = require ("./views/reports.coffee")
 DashboardView = require ("./views/dashboard.coffee")
+ReportUpdateView = require ("./views/report_update.coffee")
 
 $ ->
 	$(document).foundation()
@@ -56,6 +57,6 @@ class AppRouter extends Backbone.Router
 		@current_view = new ReportsView().show()
 
 	report_update:() ->
-		@current_view = new ReportsView().show()
+		@current_view = new ReportUpdateView().show()
 
 module.exports =  new AppRouter()

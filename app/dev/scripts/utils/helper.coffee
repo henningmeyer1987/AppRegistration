@@ -34,6 +34,6 @@ class Helper
 				console.log response
 			error:(model, response, options)->
 				console.log response
-		Backbone.history.navigate("home", trigger:true)
+		Backbone.history.navigate("reports", trigger:true)
 
 module.exports= new Helper()
