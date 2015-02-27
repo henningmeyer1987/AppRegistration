@@ -14,14 +14,13 @@ class DashboardView extends BaseView
 		$('.report-edit').on "click", (event)->
 			#event.preventDefault()
 			reportID = $(this).attr 'reportID'
-			console.log reportID
-			Backbone.history.navigate("report_update", trigger:true)
-
+			UserReportsCollection.fetch
+			
 		$('.report-delete').on "click", (event)->
 			#event.preventDefault()
 			console.log "TEST"
 			reportID = $(this).attr 'reportID'
-			Helper.deleteReport(reportID)
+			#Helper.deleteReport(reportID)
 	)
 
 	el: "#js-content-region"

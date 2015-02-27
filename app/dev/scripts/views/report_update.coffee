@@ -11,7 +11,7 @@ require("jquery-serialize-object")
 moment= require("moment")
 
 
-class ReportUpdate extends BaseView
+class ReportUpdateView extends BaseView
 	model: {}
 	el: "#js-content-region"
 	template: "app/dev/templates/reports_update.html"
@@ -50,4 +50,4 @@ class ReportUpdate extends BaseView
 
 
 
-module.exports = ReportUpdate
+module.exports = ReportUpdateView
