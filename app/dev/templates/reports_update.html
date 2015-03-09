@@ -1,45 +1,48 @@
-<div class="row content reports">
-	<div class="large-12 columns">
-		<h3>
-		Bericht verändern
-		</h3>
-		<form class="custom">
-			<div class="row form-row">
-				<div class="small-3 columns">
-					<label for="reportdate" class="right inline">Berichtsdatum</label>
+<div id="myModal" class="reveal-modal" data-reveal>
+	<div class="row content reports">
+		<div class="large-12 columns">
+			<h3>
+			Bericht verändern
+			</h3>
+			<form class="custom">
+				<div class="row form-row">
+					<div class="small-3 columns">
+						<label for="reportdate" class="right inline">Berichtsdatum</label>
+					</div>
+					<div class="small-9 columns">
+						<input type="text" name="reportdate" id="reportdate" value="" />
+						<small class="error hide"></small>
+					</div>
 				</div>
-				<div class="small-9 columns">
-					<input type="text" name="reportdate" id="reportdate" value="" />
-					<small class="error hide"></small>
+				<div class="row form-row">
+					<div class="small-3 columns">
+						<label for="description" class="right inline" >Bericht</label>
+					</div>
+					<div class="small-9 columns">
+						<textarea name="description" id="description"></textarea>
+						<small class="error hide"></small>
+					</div>
 				</div>
-			</div>
-			<div class="row form-row">
-				<div class="small-3 columns">
-					<label for="description" class="right inline" >Bericht</label>
+				<div class="row form-row">
+					<div class="small-3 columns">
+						<label for="reporttype" class="right">Berichtsart</label>
+					</div>
+					<div class="small-9 columns">
+						{% for report_type in report_types %}
+							<input {% if report_type.get('typename') == 'work'%} checked='checked' {% endif %} type="radio" name="typeid" id="{{report_type.get('typename')}}" value="{{report_type.get('id')}}">
+							<label for="{{report_type.get('typename')}}">{{report_type.get('typename')}}</label>
+						{% endfor %}
+					</div>
 				</div>
-				<div class="small-9 columns">
-					<textarea name="description" id="description"></textarea>
-					<small class="error hide"></small>
+				<div class="row">
+					<div class="small-12 columns text-right">
+						<button class="radius small button" type="submit">
+						<i class="fa fa-file-text"></i> Bericht verändern
+						</button>
+					</div>
 				</div>
-			</div>
-			<div class="row form-row">
-				<div class="small-3 columns">
-					<label for="reporttype" class="right">Berichtsart</label>
-				</div>
-				<div class="small-9 columns">
-					{% for report_type in report_types %}
-						<input {% if report_type.get('typename') == 'work'%} checked='checked' {% endif %} type="radio" name="typeid" id="{{report_type.get('typename')}}" value="{{report_type.get('id')}}">
-						<label for="{{report_type.get('typename')}}">{{report_type.get('typename')}}</label>
-					{% endfor %}
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-12 columns text-right">
-					<button class="radius small button" type="submit">
-					<i class="fa fa-file-text"></i> Bericht verändern
-					</button>
-				</div>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
+	<a class="close-reveal-modal">&#215;</a>
 </div>

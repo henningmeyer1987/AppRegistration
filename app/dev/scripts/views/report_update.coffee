@@ -13,7 +13,7 @@ moment= require("moment")
 
 class ReportUpdateView extends BaseView
 	model: {}
-	el: "#js-content-region"
+	el: "#js-modal-content-region"
 	template: "app/dev/templates/reports_update.html"
 	report:{}
 	events: 
