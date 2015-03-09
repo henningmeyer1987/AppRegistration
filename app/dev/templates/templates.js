@@ -127,7 +127,7 @@ output += "\n\t\t</ul>\n\t\t";
 if((lineno = 15, colno = 14, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "user")),"get", env.autoesc), "user[\"get\"]", ["username"]))) {
 output += "\n\t\t<ul class=\"right\">\n\t\t\t<li class=\"has-dropdown\">\n\t\t\t<a href=\"#\"><i class=\"fa fa-user\"></i> ";
 output += runtime.suppressValue((lineno = 18, colno = 50, runtime.callWrap(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "user")),"get", env.autoesc), "user[\"get\"]", ["username"])), env.autoesc);
-output += "</a>\n\t\t\t<ul class=\"dropdown\">\n\t\t\t\t<li><a href=\"#\">Profil ändern</a></li>\n\t\t\t\t<li><a href=\"#email_update\">Email ändern</a></li>\n\t\t\t\t<li><a href=\"#password_update\">Passwort ändern</a></li>\n\t\t\t\t<li><a href=\"#logout\">Logout</a></li>\n\t\t\t</ul>\n\t\t\t</li>\n\t\t</ul>\n\t\t";
+output += "</a>\n\t\t\t<ul class=\"dropdown\">\n\t\t\t\t<li><a href=\"#profile_update\">Profil ändern</a></li>\n\t\t\t\t<li><a href=\"#email_update\">Email ändern</a></li>\n\t\t\t\t<li><a href=\"#password_update\">Passwort ändern</a></li>\n\t\t\t\t<li><a href=\"#logout\">Logout</a></li>\n\t\t\t</ul>\n\t\t\t</li>\n\t\t</ul>\n\t\t";
 ;
 }
 output += "\n\t</section>\n</nav>";
@@ -280,6 +280,23 @@ var colno = null;
 var output = "";
 try {
 output += "<div class=\"row\">\n\t<div class=\"large-12 columns\">\n\t\t<h3>\n\t\tPasswort ändern\n\t\t</h3>\n\t\t<form id=\"form-login\">\n\t\t\t<div class=\"form-row row\">\n\t\t\t\t<div class=\"small-6 columns\">\n\t\t\t\t\t<label for=\"oldpassword\" class=\"inline\">Altes Passwort\n\t\t\t\t\t\t<input type=\"password\" name=\"oldpassword\" id=\"oldpassword\" />\n\t\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t\t</label>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-row row\">\n\t\t\t\t<div class=\"small-6 columns\">\n\t\t\t\t\t<label for=\"newpassword\" class=\"inline\" >Neues Passwort\n\t\t\t\t\t\t<input type=\"password\" name=\"newpassword\" id=\"newpassword\" />\n\t\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t\t</label>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-row row\">\n\t\t\t\t<div class=\"small-6 columns\">\n\t\t\t\t\t<label for=\"newpassword2\" class=\"inline\" >Neues Passwort wiederholen\n\t\t\t\t\t\t<input type=\"password\" name=\"newpassword2\" id=\"newpassword2\" />\n\t\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t\t</label>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"small-6 columns text-right\">\n\t\t\t\t\t<button class=\"radius small button\" type=\"submit\">\n\t\t\t\t\tPasswort ändern\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</div>";
+cb(null, output);
+;
+} catch (e) {
+  cb(runtime.handleError(e, lineno, colno));
+}
+}
+return {
+root: root
+};
+})();
+})();
+(function() {(window.nunjucksPrecompiled = window.nunjucksPrecompiled || {})["app/dev/templates/user/profile_update.html"] = (function() {function root(env, context, frame, runtime, cb) {
+var lineno = null;
+var colno = null;
+var output = "";
+try {
+output += "<div class=\"row\">\n\t<div class=\"large-12 columns\">\n\t\t<h3>\n\t\tProfil ändern\n\t\t</h3>\n\t\t<form id=\"form-login\">\n\t\t\t<div class=\"form-row row\">\n\t\t\t\t<div class=\"small-2 columns\">\n\t\t\t\t\t<label for=\"firstname\" class=\"right inline\">Vorname</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"small-4 columns left\">\n\t\t\t\t\t<input type=\"text\" name=\"firstname\" id=\"firstname\" />\n\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t</div>\n\t\t\t</div>\t\n\t\t\t<div class=\"form-row row\">\n\t\t\t\t<div class=\"small-2 columns\">\n\t\t\t\t\t<label for=\"lastname\" class=\"right inline\">Nachname</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"small-4 columns left\">\n\t\t\t\t\t<input type=\"text\" name=\"lastname\" id=\"lastname\" />\n\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t</div>\n\t\t\t</div>\t\t\n\t\t\t<div class=\"form-row row\">\n\t\t\t\t<div class=\"small-2 columns\">\n\t\t\t\t\t<label for=\"apprenticeshipstart\" class=\"right inline\">Ausbildungsbeginn</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"small-4 columns left\">\n\t\t\t\t\t<input type=\"text\" name=\"apprenticeshipstart\" id=\"apprenticeshipstart\" />\n\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"form-row row\">\n\t\t\t\t<div class=\"small-2 columns\">\n\t\t\t\t\t<label for=\"apprenticeshipend\" class=\"right inline\">Ausbildungsende</label>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"small-4 columns left\">\n\t\t\t\t\t<input type=\"text\" name=\"apprenticeshipend\" id=\"apprenticeshipend\" />\n\t\t\t\t\t<small class=\"error hide\"></small>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"small-6 columns text-right\">\n\t\t\t\t\t<button class=\"radius small button\" type=\"submit\">\n\t\t\t\t\tPasswort ändern\n\t\t\t\t\t</button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</div>";
 cb(null, output);
 ;
 } catch (e) {

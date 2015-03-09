@@ -1,5 +1,5 @@
 Backbone = require("backbone")
-BaseModel = require("./base.coffee")
+BaseModel = require("../base.coffee")
 Backbone.Validator = require("backbone-validator")
 
 class UpdatePassword extends BaseModel

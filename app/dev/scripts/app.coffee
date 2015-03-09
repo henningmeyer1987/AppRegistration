@@ -16,6 +16,7 @@ DashboardView = require ("./views/dashboard.coffee")
 ReportUpdateView = require ("./views/report_update.coffee")
 PasswordUpdateView = require ("./views/user/password_update.coffee")
 EmailUpdateView = require ("./views/user/email_update.coffee")
+ProfileUpdateView = require ("./views/user/profile_update.coffee")
 
 $ ->
 	$(document).foundation()
@@ -31,6 +32,7 @@ class AppRouter extends Backbone.Router
 		"report_update": "report_update"
 		"password_update": "password_update"
 		"email_update": "email_update"
+		"profile_update": "profile_update"
 
 	before:(route) ->
 		if _.isEmpty(@current_view) is false
@@ -68,5 +70,8 @@ class AppRouter extends Backbone.Router
 
 	email_update:() ->
 		@current_view = new EmailUpdateView().show()
+
+	profile_update:() ->
+		@current_view = new ProfileUpdateView().show()
 
 module.exports =  new AppRouter()
