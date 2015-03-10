@@ -1,6 +1,6 @@
 Backbone = require("backbone")
 BaseView = require("../base.coffee")
-UserModel = require("../../models/user.coffee")
+user = require("../../models/user.coffee")
 ProfileUpdateModel = require("../../models/user/profile_update.coffee")
 require("backbone-validator")
 $ = require("jquery")
@@ -21,14 +21,25 @@ class ProfileUpdateView extends BaseView
 		@bindValidation(@model)
 
 	show:()->
-		@render(@template, {})
+		@render(@template, user: user)
+		console.log user
 		Helper.initializeDatepicker($("#apprenticeshipstart"), true)
 		Helper.initializeDatepicker($("#apprenticeshipend"), true)
 		return @
 
 	send:(event)->
-
-		console.log "Oberaffenkackmist"
-		event.preventDefault()			
+		event.preventDefault()
+		date_now = moment().format("DD.MM.YYYY")
+		form_data = $('form').serializeObject()
+		_.extend form_data, 
+			"id" : user.get("uid")
+			"datemodified": date_now
+		@model.set(form_data)
+		return if !@model.isValid()
+		@model.save null,
+			success:(model, response, options)->
+				Backbone.history.navigate("home", trigger:true)
+			error:(model, response, options)->
+				console.log response			
 
 module.exports = ProfileUpdateView

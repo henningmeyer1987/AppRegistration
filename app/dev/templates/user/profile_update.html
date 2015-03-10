@@ -9,7 +9,7 @@
 					<label for="firstname" class="right inline">Vorname</label>
 				</div>
 				<div class="small-4 columns left">
-					<input type="text" name="firstname" id="firstname" />
+					<input type="text" name="firstname" id="firstname" value="{{user.get('firstname')}}"/>
 					<small class="error hide"></small>
 				</div>
 			</div>	
@@ -18,7 +18,7 @@
 					<label for="lastname" class="right inline">Nachname</label>
 				</div>
 				<div class="small-4 columns left">
-					<input type="text" name="lastname" id="lastname" />
+					<input type="text" name="lastname" id="lastname" value="{{user.get('lastname')}}" />
 					<small class="error hide"></small>
 				</div>
 			</div>		
