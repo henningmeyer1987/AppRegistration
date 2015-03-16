@@ -7,6 +7,6 @@ from tastypie.authorization import Authorization
 class UsersLoginResource(ModelResource):
 	class Meta:
 		queryset = users.objects.all()
-		resource_name = 'users/login'
-		excludes = ['apprenticeship_start', 'apprenticeship_end', 'department', 'last_login', 'date_created', 'date_modified', 'firstname', 'lastname']
+		resource_name = 'login'
+		excludes = ['last_login', 'apprenticeship_start', 'apprenticeship_end', 'date_created', 'date_modified', 'department', 'firstname', 'lastname']
 		authorization = Authorization()

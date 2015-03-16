@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from users.ressources import UsersResource
-from users.ressources.login import UsersLoginResource
+from users.ressources_login import UsersLoginResource
 from reports.ressources import ReportsResource
 from report_types.ressources import ReportTypesResource
 
