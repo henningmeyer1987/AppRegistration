@@ -4,7 +4,7 @@ Backbone.Validator = require("backbone-validator")
 
 class User extends BaseModel
 	urlRoot: () ->
-		return "http://localhost:8000/api/users/"	
+		return "http://localhost:2403/users/"	
 
 	validation:
 

@@ -11,6 +11,30 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='report_types',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('type_name', models.CharField(max_length=200)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='reports',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('description', models.CharField(max_length=200)),
+                ('report_date', models.DateTimeField(verbose_name=b'date published')),
+                ('date_created', models.DateTimeField(verbose_name=b'date published')),
+                ('date_modified', models.DateTimeField(verbose_name=b'date published')),
+                ('report_type', models.IntegerField(max_length=1)),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
             name='users',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
