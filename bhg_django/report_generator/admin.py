@@ -1,8 +1,8 @@
 from django.contrib import admin
-from report_generator.models import reports
-from report_generator.models import report_types
-from report_generator.models import users
+from report_generator.models import report
+from report_generator.models import report_type
+from report_generator.models import user
 
-admin.site.register(reports)
-admin.site.register(report_types)
-admin.site.register(users)
+admin.site.register(report)
+admin.site.register(report_type)
+admin.site.register(user)
