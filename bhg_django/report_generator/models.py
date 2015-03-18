@@ -1,11 +1,11 @@
 from django.db import models
 
 
-class report_type(models.Model):
+class ReportType(models.Model):
 	type_name = models.CharField(max_length=200)
 
 
-class user(models.Model):
+class User(models.Model):
 	login = models.EmailField(max_length=75)
 	password = models.CharField(max_length=100)
 	firstname = models.CharField(max_length=50)
@@ -18,7 +18,7 @@ class user(models.Model):
 	date_modified = models.DateTimeField('date published')
 
 
-class report(models.Model):
+class Report(models.Model):
 	description = models.CharField(max_length=200)
 	report_date = models.DateTimeField('date published')
 	date_created = models.DateTimeField('date published')
