@@ -13,13 +13,13 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class ReportSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = Report
-		fields = ('description', 'report_date', 'report_type')
+		fields = ('description', 'report_date')
 
 
 class ReportTypeSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = ReportType
-		fields = ('description', 'report_date', 'report_type')
+		fields = ('id', 'type_name')
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -47,6 +47,6 @@ urlpatterns = patterns('',
 	# Examples:
 	# url(r'^$', 'bhg_django.views.home', name='home'),
 	# url(r'^blog/', include('blog.urls')),
-
+	url(r'^', include(router.urls)),
 	url(r'^admin/', include(admin.site.urls))
 )
