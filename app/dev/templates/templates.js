@@ -162,18 +162,18 @@ frame.set("loop.first", t_1 === 0);
 frame.set("loop.last", t_1 === t_2 - 1);
 frame.set("loop.length", t_2);
 output += "\n\t\t\t\t\t\t<input ";
-if((lineno = 30, colno = 32, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["typename"])) == "work") {
+if((lineno = 30, colno = 32, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["type_name"])) == "work") {
 output += " checked='checked' ";
 ;
 }
 output += " type=\"radio\" name=\"typeid\" id=\"";
-output += runtime.suppressValue((lineno = 30, colno = 127, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["typename"])), env.autoesc);
+output += runtime.suppressValue((lineno = 30, colno = 128, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["type_name"])), env.autoesc);
 output += "\" value=\"";
-output += runtime.suppressValue((lineno = 30, colno = 163, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["id"])), env.autoesc);
+output += runtime.suppressValue((lineno = 30, colno = 165, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["id"])), env.autoesc);
 output += "\">\n\t\t\t\t\t\t<label for=\"";
-output += runtime.suppressValue((lineno = 31, colno = 33, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["typename"])), env.autoesc);
+output += runtime.suppressValue((lineno = 31, colno = 33, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["type_name"])), env.autoesc);
 output += "\">";
-output += runtime.suppressValue((lineno = 31, colno = 62, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["typename"])), env.autoesc);
+output += runtime.suppressValue((lineno = 31, colno = 63, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report_type[\"get\"]", ["type_name"])), env.autoesc);
 output += "</label>\n\t\t\t\t\t";
 ;
 }

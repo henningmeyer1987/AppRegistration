@@ -28,8 +28,8 @@
 				</div>
 				<div class="small-9 columns">
 					{% for report_type in report_types %}
-						<input {% if report_type.get('typename') == 'work'%} checked='checked' {% endif %} type="radio" name="typeid" id="{{report_type.get('typename')}}" value="{{report_type.get('id')}}">
-						<label for="{{report_type.get('typename')}}">{{report_type.get('typename')}}</label>
+						<input {% if report_type.get('type_name') == 'work'%} checked='checked' {% endif %} type="radio" name="typeid" id="{{report_type.get('type_name')}}" value="{{report_type.get('id')}}">
+						<label for="{{report_type.get('type_name')}}">{{report_type.get('type_name')}}</label>
 					{% endfor %}
 				</div>
 			</div>
