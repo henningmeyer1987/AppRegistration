@@ -17,13 +17,15 @@
 				</th>
 				<th width="300px">
 				</th>
+				<th width="50px">
+				</th>
 			</tr>
 		</thead>
 		<tbody>
 			{% for report in reports %}
 			<tr>
 				<td>
-					{{report.get('reportdate')}}
+					{{report.get('report_date')}}
 				</td>
 				<td>
 					{{report.get('description')}}
@@ -42,6 +44,11 @@
 							</span>
 						</li>
 					</ul>
+				</td>
+				<td>
+					<p>
+						{{report.get('report_type')}}
+					</p>
 				</td>
 			</tr>
 			{% endfor %}

@@ -36,7 +36,7 @@ var lineno = null;
 var colno = null;
 var output = "";
 try {
-output += "<div class=\"row content\">\n\t<div class=\"small-12 columns\">\n\t\t<h3>\n\t\t\tBerichte Übersicht\n\t\t</h3>\n\t</div>\n</div>\n<div class=\"row\">\n\t<table>\n\t\t<thead>\n\t\t\t<tr>\n\t\t\t\t<th width=\"300px\">\n\t\t\t\t\tBerichtsdatum\n\t\t\t\t</th>\n\t\t\t\t<th width=\"1500px\">\n\t\t\t\t\tBericht\n\t\t\t\t</th>\n\t\t\t\t<th width=\"300px\">\n\t\t\t\t</th>\n\t\t\t</tr>\n\t\t</thead>\n\t\t<tbody>\n\t\t\t";
+output += "<div class=\"row content\">\n\t<div class=\"small-12 columns\">\n\t\t<h3>\n\t\t\tBerichte Übersicht\n\t\t</h3>\n\t</div>\n</div>\n<div class=\"row\">\n\t<table>\n\t\t<thead>\n\t\t\t<tr>\n\t\t\t\t<th width=\"300px\">\n\t\t\t\t\tBerichtsdatum\n\t\t\t\t</th>\n\t\t\t\t<th width=\"1500px\">\n\t\t\t\t\tBericht\n\t\t\t\t</th>\n\t\t\t\t<th width=\"300px\">\n\t\t\t\t</th>\n\t\t\t\t<th width=\"50px\">\n\t\t\t\t</th>\n\t\t\t</tr>\n\t\t</thead>\n\t\t<tbody>\n\t\t\t";
 frame = frame.push();
 var t_3 = runtime.contextOrFrameLookup(context, frame, "reports");
 if(t_3) {var t_2 = t_3.length;
@@ -51,14 +51,16 @@ frame.set("loop.first", t_1 === 0);
 frame.set("loop.last", t_1 === t_2 - 1);
 frame.set("loop.length", t_2);
 output += "\n\t\t\t<tr>\n\t\t\t\t<td>\n\t\t\t\t\t";
-output += runtime.suppressValue((lineno = 25, colno = 15, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["reportdate"])), env.autoesc);
+output += runtime.suppressValue((lineno = 27, colno = 15, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["report_date"])), env.autoesc);
 output += "\n\t\t\t\t</td>\n\t\t\t\t<td>\n\t\t\t\t\t";
-output += runtime.suppressValue((lineno = 28, colno = 15, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["description"])), env.autoesc);
+output += runtime.suppressValue((lineno = 30, colno = 15, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["description"])), env.autoesc);
 output += "\n\n\t\t\t\t</td>\n\t\t\t\t<td>\n\t\t\t\t\t<ul class=\"button-group round\">\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<span data-tooltip aria-haspopup=\"true\" class=\"has-tip\" title=\"Bericht editieren\">\n\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button small success fa fa-pencil-square-o report-edit\" reportID=\"";
-output += runtime.suppressValue((lineno = 35, colno = 103, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["id"])), env.autoesc);
+output += runtime.suppressValue((lineno = 37, colno = 103, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["id"])), env.autoesc);
 output += "\" data-reveal-id=\"myModal\"></a>\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<span data-tooltip aria-haspopup=\"true\" class=\"has-tip\" title=\"Bericht löschen\">\n\t\t\t\t\t\t\t<a class=\"button small alert report-delete fa fa-trash-o\" reportID=\"";
-output += runtime.suppressValue((lineno = 40, colno = 85, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["id"])), env.autoesc);
-output += "\"></a>\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t\t";
+output += runtime.suppressValue((lineno = 42, colno = 85, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["id"])), env.autoesc);
+output += "\"></a>\n\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</td>\n\t\t\t\t<td>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t";
+output += runtime.suppressValue((lineno = 49, colno = 16, runtime.callWrap(runtime.memberLookup((t_4),"get", env.autoesc), "report[\"get\"]", ["report_type"])), env.autoesc);
+output += "\n\t\t\t\t\t</p>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t\t";
 ;
 }
 }

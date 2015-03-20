@@ -3,11 +3,11 @@ BaseModel = require("./base.coffee")
 Backbone.Validator = require("backbone-validator")
 
 class Reports extends BaseModel
-	urlRoot: "http://localhost:2403/reports"
+	urlRoot: "http://localhost:8000/reports"
 	
 	validation:
 		
-		reportdate:
+		report_date:
 			required: true
 			format: /^([0-9]{1,2})\.([0-9]{1,2})\.([0-9]{4})$/
 			message: "Berichtsdatum erforderlich"

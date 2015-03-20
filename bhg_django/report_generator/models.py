@@ -23,4 +23,4 @@ class Report(models.Model):
 	report_date = models.DateTimeField('date published')
 	date_created = models.DateTimeField('date published')
 	date_modified = models.DateTimeField('date published')
-	report_type = models.IntegerField(max_length=1)
+	report_type = models.ForeignKey("ReportType", to_field='id')
